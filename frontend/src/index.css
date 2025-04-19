@@ -3,6 +3,15 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --color_oscuro: #231F20;
+  --color_claro_fondo: #ffffff;
+  --color_claro: #ECEFF1;
+  --color_naranja: #F87C02;
+  --color_amarillo: #EDE734;
+  --color_verde: #AFD69D;
+  --color_marron_claro: #D8CC99;
+
+
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -11,6 +20,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body, html, #root {
+  width: 100vw;
+  height: 100vh;
 }
 
 a {
@@ -26,8 +40,14 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 h1 {

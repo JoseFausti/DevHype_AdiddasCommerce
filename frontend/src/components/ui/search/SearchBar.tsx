@@ -1,0 +1,30 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const SearchBar = () => {
+  const [query, setQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query.trim() !== '') {
+      navigate(`/products?name=${encodeURIComponent(query)}`);
+    }
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Buscar productos..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
+  );
+};
+
+export default SearchBar;
