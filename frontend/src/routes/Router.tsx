@@ -7,7 +7,7 @@ import Products from "../components/screens/Products"
 import Logout from "../components/screens/Logout"
 import Admin from "../components/screens/Admin"
 
-const routes = () => {
+const Router = () => {
   return (
     <BrowserRouter> 
         <Routes>
@@ -23,4 +23,4 @@ const routes = () => {
   )
 }
 
-export default routes
+export default Router

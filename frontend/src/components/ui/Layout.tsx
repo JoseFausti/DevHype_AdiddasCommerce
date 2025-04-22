@@ -13,16 +13,22 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
                 <span>Hola mundo — Bienvenido — JavaScript — React — TypeScript —</span>{/* Mostramos palabras al azar en movimiento */}
             </div>
             {/* Header Menu */}
-            <div>
-                <div>
-                    <img src="" alt="logo" />
-                    <Link to={{pathname: "/products", search: '?category=Woman'}}>Woman</Link>
-                    <Link to={{pathname: "/products", search: '?category=Men'}}>Men</Link>
-                    <Link to={{pathname: "/products", search: '?category=Shoes'}}>Shoes</Link> 
+            <div className={styles.header__menu__container}>
+                {/* Logo */}
+                <div className={styles.header__logo}>
+                    <img src="./public/assets/Adidas_Logo.svg" alt="logo"/>
+                </div>
+                {/* Links */}
+                <div className={styles.header__links}>
+                    <Link to={{pathname: "/products", search: '?category=woman'}}>WOMAN</Link>
+                    <Link to={{pathname: "/products", search: '?category=men'}}>MEN</Link>
+                    <Link to={{pathname: "/products", search: '?category=shoes'}}>SHOES</Link> 
                 </div>
                 {/* SearchBar */}
-                <div>
+                <div className={styles.header__search_login_and_cart}>
                     <SearchBar />
+                    <p>Login</p>
+                    <p>Cart</p>
                 </div>
             </div>
         </header>
@@ -33,7 +39,7 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
         {/* Footer */}
         <footer className={styles.footer__container}>
             <div className={styles.footer__components__container}>
-                <div className={styles.footer__info}>
+                <div className={styles.footer__elements}>
                     <h2>Info</h2>
                     <ul>
                         <li>About Us</li>
@@ -42,7 +48,7 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
                         <li>Shipping Policy</li>
                     </ul>
                 </div>
-                <div className={styles.footer__collections}>
+                <div className={styles.footer__elements}>
                     <h2>Collections</h2>
                     <ul>
                         <li>Men</li>
@@ -51,7 +57,7 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
                         <li>Discounts</li>
                     </ul>
                 </div>
-                <div className={styles.footer__support}>
+                <div className={styles.footer__elements}>
                     <h2>Support</h2>
                     <ul>
                         <li>FAQ</li>
@@ -61,7 +67,7 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
                         <li>Contact Us</li>
                     </ul>
                 </div>
-                <div className={styles.footer__social}>
+                <div className={styles.footer__elements}>
                     <h2>Follow Us</h2>
                     <ul>
                         <li>Facebook</li>
@@ -72,11 +78,9 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
                 </div>
             </div>
             <div className={styles.footer__payment}>
-                <ul>
-                    <li>Visa</li>
-                    <li>Mastercard</li>
-                    <li>American Express</li>
-                </ul>
+                <p>Visa</p>
+                <p>Mastercard</p>
+                <p>American Express</p>
             </div>
         </footer>
     </div>

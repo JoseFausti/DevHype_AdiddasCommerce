@@ -6,10 +6,11 @@ export interface IProduct{
     image: string | undefined;
     description: string;
     category: string;
+    gender: string;
     cuantity: number;
     color: string;
     brand: string;
-    waist: number;
+    size: number;
     stock: number | undefined;
     price: number;
     discount: number | undefined;
@@ -20,8 +21,8 @@ export interface IDirection{
     id: number;
     street: string;
     number: number;
+    locality: string;
     city: string;
-    state: string;
     country: string;
     postalCode: number;
 }
