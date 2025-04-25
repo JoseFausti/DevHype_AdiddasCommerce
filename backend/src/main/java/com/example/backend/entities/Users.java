@@ -29,9 +29,11 @@ public class Users extends Base{
     @Column( name = "role")
     private String role;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Purchase_orders> purchase_orders;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+        name = "users_directions",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "directions_id")
+        )
     private List<Directions> directions;
 }

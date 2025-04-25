@@ -1,5 +1,7 @@
 package com.example.backend.entities;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,7 +32,9 @@ public class Directions extends Base {
     @Column(name = "postal_code")
     private String postalCode;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToMany(mappedBy= "directions")
+    private List<Users> users;
+
     @JoinColumn(name = "user_id")
     private Users user;
 }
