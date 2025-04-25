@@ -1,12 +1,9 @@
 package com.example.backend.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -14,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Products extends Base{
 
     @Column(name = "name")
@@ -30,9 +28,6 @@ public class Products extends Base{
 
     @Column(name = "final_price")
     private double finalPrice;
-
-    @Column(name = "category")
-    private String category;
 
     @Column(name = "gender")
     private String gender;
@@ -54,5 +49,28 @@ public class Products extends Base{
     
     @Column(name = "brand")
     private String brand;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Details> details;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "category_id")
+    private Categories category;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+            name = "product_size",
+            joinColumns = @JoinColumn(name = "id_product"),
+            inverseJoinColumns = @JoinColumn(name = "id_size")
+    )
+    private List<Sizes> sizes;
+
+    @ManyToMany
+    @JoinTable(
+            name = "product_discount",
+            joinColumns = @JoinColumn(name = "id_product"),
+            inverseJoinColumns = @JoinColumn(name = "id_discount")
+    )
+    private List<Discounts> discounts;
 
 }

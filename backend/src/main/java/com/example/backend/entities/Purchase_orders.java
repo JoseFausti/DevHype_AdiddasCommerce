@@ -1,12 +1,9 @@
 package com.example.backend.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "Purchase_orders")
@@ -14,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Purchase_orders extends Base {
     
     @Column(name = "date")
@@ -27,4 +25,12 @@ public class Purchase_orders extends Base {
 
     @Column(name = "status")
     private String status;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "user_id")
+    private Users user;
+
+    @OneToMany(mappedBy = "purchase_order", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Details> details;
+
 }
