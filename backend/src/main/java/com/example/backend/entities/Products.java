@@ -23,9 +23,6 @@ public class Products extends Base{
     @Column(name = "stock" , nullable = false)
     private int stock;
 
-    @Column(name = "discount")
-    private double discount;
-
     @Column(name = "final_price")
     private double finalPrice;
 
@@ -40,9 +37,6 @@ public class Products extends Base{
 
     @Column(name = "description")
     private String description;
-    
-    @Column(name = "size")
-    private String size;
 
     @Column(name = "color")
     private String color;

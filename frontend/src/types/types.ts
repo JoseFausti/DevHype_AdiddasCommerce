@@ -1,7 +1,12 @@
 import { ReactNode } from "react";
 
-export interface IProduct{
-    id: number;
+// Interfaces
+interface Base{
+    id: string;
+    deleted: boolean;
+}
+
+export interface IProduct extends Base{
     name: string;
     image: string | undefined;
     description: string;
@@ -10,25 +15,46 @@ export interface IProduct{
     cuantity: number;
     color: string;
     brand: string;
-    size: number;
     stock: number | undefined;
     price: number;
-    discount: number | undefined;
     finalPrice: number;
+    size: ISize[];
+    discount: IDiscount[];
 }
 
-export interface IDirection{
-    id: number;
+export interface IDiscount extends Base{
+    initialDate: string;
+    finalDate: string;
+    percentage: number;
+    products: IProduct[];
+}
+
+export interface IPurchaseOrder extends Base{
+    date: string;
+    totalPrice: number;
+    paymentMethod: string;
+    status: string;
+    user: IUser;
+    details: IDetail[];
+}
+
+export interface IDetail extends Base{
+    cuantity: number;
+    product: IProduct;
+    purchase_order: IPurchaseOrder;
+}
+
+export interface IDirection extends Base{
     street: string;
     number: number;
     locality: string;
     city: string;
     country: string;
     postalCode: number;
+    users: IUser[];
 }
 
-export interface IUser{
-    id: number;
+export interface IUser extends Base{
     name: string;
     surname: string;
     email: string;
@@ -37,6 +63,31 @@ export interface IUser{
     address: IDirection
 }
 
+export interface ICategory extends Base{
+    name: string;
+    products: IProduct[];
+    types: IType[];
+}
+
+export interface IType extends Base{
+    name: string;
+    category: ICategory;
+}
+
+export interface ISize extends Base{
+    size: number;
+    products: IProduct[];
+}
+
+
+// Props
 export interface ChildrenProps {
     children: ReactNode;
+}
+
+// Http props
+export interface IHttpResponse<E> {
+    data: E | Partial<E>;
+    error: string;
+    status: number;
 }

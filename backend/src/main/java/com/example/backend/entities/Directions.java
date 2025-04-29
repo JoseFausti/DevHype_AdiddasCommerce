@@ -34,7 +34,4 @@ public class Directions extends Base {
 
     @ManyToMany(mappedBy= "directions")
     private List<Users> users;
-
-    @JoinColumn(name = "user_id")
-    private Users user;
 }
