@@ -2,9 +2,12 @@ package com.example.backend.services;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Optional;
 
 import com.example.backend.entities.Base;
 import com.example.backend.repositories.BaseRepository;
+
+import jakarta.transaction.Transactional;
 
 public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> implements BaseService<E, ID> {
     
@@ -15,45 +18,63 @@ public abstract class BaseServiceImpl<E extends Base, ID extends Serializable> i
     }
 
     @Override
+    @Transactional
     public boolean delete(ID id) throws Exception{
         try {
-            result = baseRepository.delete(id);
+            Optional<E> entityOptional = baseRepository.findById(id);
+            if (entityOptional.isPresent()) {
+                entityOptional.get().setDeleted(true);
+                baseRepository.save(entityOptional.get());
+                return true;
+            }else{
+                throw new Exception();
+            }
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }
 
     @Override
-    public E update(E entity) throws Exception {
+    @Transactional
+    public E update(E entity, ID id) throws Exception {
         try {
-            
+           Optional<E> entityOptional = baseRepository.findById(id);
+           entity = entityOptional.get();
+           entity = baseRepository.save(entity);
+           return entity;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }
 
     @Override
+    @Transactional
     public E save(E entity) throws Exception {
         try {
-            
+            entity = baseRepository.save(entity);
+            return entity;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }
 
     @Override
+    @Transactional
     public E findById(ID id) throws Exception {
         try {
-            
+            Optional<E> entityOptional = baseRepository.findById(id);
+            return entityOptional.get();
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
     }
 
     @Override
+    @Transactional
     public List<E> findAll() throws Exception {
         try {
-            
+            List<E> entities = baseRepository.findAll();
+            return entities;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

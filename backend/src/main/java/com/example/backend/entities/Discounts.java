@@ -2,11 +2,11 @@ package com.example.backend.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "discounts")
@@ -14,6 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Discounts extends Base {
 
     @Column(name = "initial_date")
@@ -24,4 +25,7 @@ public class Discounts extends Base {
 
     @Column(name = "percentage")
     private double percentage;
+
+    @ManyToMany(mappedBy = "discounts")
+    private List<Products> products;
 }

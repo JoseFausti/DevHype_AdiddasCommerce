@@ -1,12 +1,9 @@
 package com.example.backend.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -14,6 +11,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
+@Builder
 public class Users extends Base{
 
     @Column( name = "name")
@@ -31,4 +29,11 @@ public class Users extends Base{
     @Column( name = "role")
     private String role;
 
+    @ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+        name = "users_directions",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "directions_id")
+        )
+    private List<Directions> directions;
 }

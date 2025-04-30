@@ -1,4 +1,4 @@
-import Home from "./components/ui/Home"
+import Home from "./components/screens/Home"
 import Layout from "./components/ui/Layout"
 
 function App() {
