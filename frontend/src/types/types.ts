@@ -17,6 +17,13 @@ export interface IProduct{
     finalPrice: number;
 }
 
+export interface ProductCardProps {
+    image: string;
+    price: number;
+    title: string;
+    subtitle: string;
+  }
+
 export interface IDirection{
     id: number;
     street: string;

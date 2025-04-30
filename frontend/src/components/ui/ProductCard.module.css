@@ -1,0 +1,57 @@
+.card {
+  width: 250px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+  
+  .image {
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+  
+  .details {
+    text-align: left; /* Cambiado de center a left */
+    width: 100%; /* Para asegurar que el texto use todo el ancho disponible */
+    color: #222;
+  }  
+  
+  .price {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .shipping {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0.2rem 0 0.8rem;
+  }
+  
+  .title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0.3rem 0 0;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }

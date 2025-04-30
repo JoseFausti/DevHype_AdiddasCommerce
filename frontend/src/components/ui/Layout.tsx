@@ -1,42 +1,53 @@
-import styles from './Layout.module.css'; 
+import styles from './Layout.module.css';
 import { ChildrenProps } from '../../types/types';
 import { Link } from 'react-router-dom';
-import SearchBar from './search/SearchBar';
+import { User, ShoppingCart, Search } from 'lucide-react';
 
 const Layout: React.FC<ChildrenProps> = ({ children }) => {
-  return (
-    <div className={styles.layout__container}>
-        {/* Header */}
-        <header className={styles.header__container}>
-            {/* Marquee */}
-            <div className={styles.header__marquee}>
-                <span>Hola mundo — Bienvenido — JavaScript — React — TypeScript —</span>{/* Mostramos palabras al azar en movimiento */}
-            </div>
-            {/* Header Menu */}
-            <div className={styles.header__menu__container}>
-                {/* Logo */}
-                <div className={styles.header__logo}>
-                    <img src="./public/assets/Adidas_Logo.svg" alt="logo"/>
+    return (
+        <div className={styles.layout__container}>
+            {/* Header */}
+            <header className={styles.header__container}>
+                {/* Marquee */}
+                <div className={styles.header__marquee}>
+                    <img src="assets/Logotipo Adidas Gris.svg" alt="Logo" />
                 </div>
-                {/* Links */}
-                <div className={styles.header__links}>
-                    <Link to={{pathname: "/products", search: '?category=woman'}}>WOMAN</Link>
-                    <Link to={{pathname: "/products", search: '?category=men'}}>MEN</Link>
-                    <Link to={{pathname: "/products", search: '?category=shoes'}}>SHOES</Link> 
+
+                {/* Header Menu */}
+                <div className={styles.header__menu__container}>
+                    {/* Logo + Links */}
+                    <div className={styles.header__left}>
+                        <div className={styles.header__logo}>
+                            <img src="assets/Logotipo Adidas.svg" alt="Logo Adidas" />
+                        </div>
+                        <div className={styles.header__links}>
+                            <Link to={{ pathname: "/products", search: '?category=woman' }}>WOMAN</Link>
+                            <Link to={{ pathname: "/products", search: '?category=men' }}>MEN</Link>
+                            <Link to={{ pathname: "/products", search: '?category=shoes' }}>SHOES</Link>
+                            <Link to={{pathname: "/products", search: '?category=discounts'}}><span className={styles.discount}>DISCOUNTS</span></Link>
+                        </div>
+                    </div>
+
+                    {/* Search + Icons */}
+                    <div className={styles.header__search_login_and_cart}>
+                        <form className={styles.search__form}>
+                            <input type="text" placeholder="Search..." />
+                            <button type="submit"><Search size={20} color="#000" /></button>
+                        </form>
+                        <User size={24} color="#000" style={{ cursor: 'pointer' }} />
+                        <ShoppingCart size={24} color="#000" style={{ cursor: 'pointer' }} />
+                    </div>
                 </div>
-                {/* SearchBar */}
-                <div className={styles.header__search_login_and_cart}>
-                    <SearchBar />
-                    <p>Login</p>
-                    <p>Cart</p>
-                </div>
-            </div>
-        </header>
-        {/* Content */}
-        <main>
-            {children}
-        </main>
-        {/* Footer */}
+
+            </header>
+
+            {/* Content */}
+            <main>
+                {children}
+            </main>
+
+            {/* Footer */}
+        
         <footer className={styles.footer__container}>
             <div className={styles.footer__components__container}>
                 <div className={styles.footer__elements}>
@@ -87,4 +98,4 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
   )
 }
 
-export default Layout
+export default Layout;

@@ -5,7 +5,7 @@ import Register from "../components/screens/Register"
 import Shopcart from "../components/screens/Shopcart"
 import Products from "../components/screens/Products"
 import Logout from "../components/screens/Logout"
-import Admin from "../components/screens/Admin"
+import Admin from "../components/screens/Admin/Admin"
 
 const Router = () => {
   return (
