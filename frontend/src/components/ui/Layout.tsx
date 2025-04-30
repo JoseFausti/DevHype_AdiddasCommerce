@@ -1,9 +1,9 @@
 import styles from './Layout.module.css';
-import { ChildrenProps } from '../../types/types';
 import { Link } from 'react-router-dom';
 import { User, ShoppingCart, Search } from 'lucide-react';
+import { Outlet } from 'react-router-dom';
 
-const Layout: React.FC<ChildrenProps> = ({ children }) => {
+const Layout = () => {
     return (
         <div className={styles.layout__container}>
             {/* Header */}
@@ -24,7 +24,7 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
                             <Link to={{ pathname: "/products", search: '?category=woman' }}>WOMAN</Link>
                             <Link to={{ pathname: "/products", search: '?category=men' }}>MEN</Link>
                             <Link to={{ pathname: "/products", search: '?category=shoes' }}>SHOES</Link>
-                            <Link to={{pathname: "/products", search: '?category=discounts'}}><span className={styles.discount}>DISCOUNTS</span></Link>
+                            <Link to={{ pathname: "/products", search: '?category=discounts' }}><span className={styles.discount}>DISCOUNTS</span></Link>
                         </div>
                     </div>
 
@@ -34,68 +34,70 @@ const Layout: React.FC<ChildrenProps> = ({ children }) => {
                             <input type="text" placeholder="Search..." />
                             <button type="submit"><Search size={20} color="#000" /></button>
                         </form>
-                        <User size={24} color="#000" style={{ cursor: 'pointer' }} />
-                        <ShoppingCart size={24} color="#000" style={{ cursor: 'pointer' }} />
+                        <Link to="/Login">
+                            <User size={24} color="#000" style={{ cursor: 'pointer' }} />
+                        </Link>
+                        <Link to="/Shopcart">
+                            <ShoppingCart size={24} color="#000" style={{ cursor: 'pointer' }} />
+                        </Link>
                     </div>
                 </div>
-
             </header>
 
             {/* Content */}
             <main>
-                {children}
+                <Outlet />
             </main>
 
             {/* Footer */}
-        
-        <footer className={styles.footer__container}>
-            <div className={styles.footer__components__container}>
-                <div className={styles.footer__elements}>
-                    <h2>Info</h2>
-                    <ul>
-                        <li>About Us</li>
-                        <li>Privacy Policy</li>
-                        <li>Terms of Service</li>
-                        <li>Shipping Policy</li>
-                    </ul>
+            <footer className={styles.footer__container}>
+                <div className={styles.footer__components__container}>
+                    <div className={styles.footer__elements}>
+                        <h2>Info</h2>
+                        <ul>
+                            <li>About Us</li>
+                            <li>Privacy Policy</li>
+                            <li>Terms of Service</li>
+                            <li>Shipping Policy</li>
+                        </ul>
+                    </div>
+                    <div className={styles.footer__elements}>
+                        <h2>Collections</h2>
+                        <ul>
+                            <li>Men</li>
+                            <li>Women</li>
+                            <li>Shoes</li>
+                            <li>Discounts</li>
+                        </ul>
+                    </div>
+                    <div className={styles.footer__elements}>
+                        <h2>Support</h2>
+                        <ul>
+                            <li>FAQ</li>
+                            <li>Shipping & Returns</li>
+                            <li>Order Tracking</li>
+                            <li>Size Guide</li>
+                            <li>Contact Us</li>
+                        </ul>
+                    </div>
+                    <div className={styles.footer__elements}>
+                        <h2>Follow Us</h2>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Instagram</li>
+                            <li>Twitter</li>
+                            <li>YouTube</li>
+                        </ul>
+                    </div>
                 </div>
-                <div className={styles.footer__elements}>
-                    <h2>Collections</h2>
-                    <ul>
-                        <li>Men</li>
-                        <li>Women</li>
-                        <li>Shoes</li>
-                        <li>Discounts</li>
-                    </ul>
+                <div className={styles.footer__payment}>
+                    <p>Visa</p>
+                    <p>Mastercard</p>
+                    <p>American Express</p>
                 </div>
-                <div className={styles.footer__elements}>
-                    <h2>Support</h2>
-                    <ul>
-                        <li>FAQ</li>
-                        <li>Shipping & Returns</li>
-                        <li>Order Tracking</li>
-                        <li>Size Guide</li>
-                        <li>Contact Us</li>
-                    </ul>
-                </div>
-                <div className={styles.footer__elements}>
-                    <h2>Follow Us</h2>
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Instagram</li>
-                        <li>Twitter</li>
-                        <li>YouTube</li>
-                    </ul>
-                </div>
-            </div>
-            <div className={styles.footer__payment}>
-                <p>Visa</p>
-                <p>Mastercard</p>
-                <p>American Express</p>
-            </div>
-        </footer>
-    </div>
-  )
-}
+            </footer>
+        </div>
+    );
+};
 
 export default Layout;

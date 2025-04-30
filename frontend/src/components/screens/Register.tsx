@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import styles from './Register.module.css'; // O el mismo que Login.module.css
 
 const Register = () => {
   return (
-    <>
-      <form action="">
-        <div>
-          <img src="../../assets/Adidas_Logo.svg" alt="adidas" />
-        </div>
+    <div className={styles.loginForm}>
+      <form>
+        {/* Logo en esquina superior izquierda */}
+        <img src="../../assets/Logotipo Adidas.svg" alt="adidas" />
+
+        {/* Título centrado */}
         <h2>Registrarse</h2>
-        <div>
+
+        {/* Inputs del formulario */}
+        <div className={styles.inputGroup}>
           <label htmlFor="name">Nombre</label>
           <input type="text" name="name" id="name" />
 
@@ -21,16 +25,15 @@ const Register = () => {
           <label htmlFor="confirmPassword">Confirmar Contraseña</label>
           <input type="password" name="confirmPassword" id="confirmPassword" />
         </div>
-        <div>
-          <button>Crear Cuenta</button>
-        </div>
 
-        <div>
-          <p>¿Ya tienes una cuenta? <span><Link to={'/login'}>Iniciar Sesión</Link></span></p>
-        </div>
+        {/* Botón alineado a la izquierda */}
+        <button type="submit">Crear Cuenta</button>
+
+        {/* Texto también alineado a la izquierda */}
+        <p>¿Ya tienes una cuenta? <span><Link to="/login">Iniciar Sesión</Link></span></p>
       </form>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default Register
+export default Register;

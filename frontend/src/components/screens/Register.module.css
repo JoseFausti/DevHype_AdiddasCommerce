@@ -1,0 +1,107 @@
+/* Contenedor oscuro del fondo */
+.loginForm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+  }
+
+ /* Modal de inicio de sesión */
+ form {
+    background-color: white; /* Modal blanco */
+    color: #000;
+    font-family:'Montserrat', sans-serif;
+    padding: 2rem;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    max-height: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    position: relative;
+  }
+  
+  form input{
+    width: 370px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Logo pequeño en la esquina superior izquierda */
+  form img {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 35px;
+    height: auto;
+  }
+  
+  /* Título centrado arriba */
+  h2 {
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  /* Inputs iguales y centrados */
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Botón alineado a la izquierda */
+  button {
+    align-self: flex-start;
+    padding: 0.8rem 1.2rem;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  button:hover {
+    background-color: #333;
+  }
+  
+  /* Mensaje alineado a la izquierda, debajo del botón */
+  p {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    margin-top: 1rem;
+  }
+  
+  p span a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  p span a:hover {
+    text-decoration: underline;
+  }
+
