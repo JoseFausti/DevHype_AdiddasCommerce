@@ -1,9 +1,21 @@
 package com.example.backend.entities;
 
-import jakarta.persistence.*;
-import lombok.*;
-
 import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "products")
@@ -37,12 +49,17 @@ public class Products extends Base{
 
     @Column(name = "description")
     private String description;
-
-    @Column(name = "color")
-    private String color;
     
     @Column(name = "brand")
     private String brand;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+        name="product_color",
+        joinColumns = @JoinColumn(name = "id_product"),
+        inverseJoinColumns = @JoinColumn(name = "id_color")
+    )
+    private List<Colors> colors;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Details> details;

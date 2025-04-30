@@ -7,4 +7,5 @@ export const API_PRODUCTS_URL = 'http://localhost:8080/products';
 export const API_PURCHASE_ORDERS_URL = 'http://localhost:8080/purchase_orders';
 export const API_SIZES_URL = 'http://localhost:8080/sizes';
 export const API_TYPES_URL = 'http://localhost:8080/types';
+export const API_COLORS_URL = 'http://localhost:8080/colors';
 export const API_USERS_URL = 'http://localhost:8080/users';

@@ -8,7 +8,7 @@ export const getDetails = async (): Promise<IDetail[] | {error: string}> => {
         return data;
     } catch (err) {
         return {
-            error: "Se produjo un error al obtener los detalles en getAllDetails: " + err,
+            error: "Se produjo un error al obtener los detalles en getDetails: " + err,
         }
     }
 }

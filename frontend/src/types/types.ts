@@ -13,11 +13,11 @@ export interface IProduct extends Base{
     category: string;
     gender: string;
     cuantity: number;
-    color: string;
     brand: string;
     stock: number | undefined;
     price: number;
     finalPrice: number;
+    colorImg: IColor[];
     size: ISize[];
     discount: IDiscount[];
 }
@@ -79,6 +79,10 @@ export interface ISize extends Base{
     products: IProduct[];
 }
 
+export interface IColor extends Base{
+    colorImg: string;
+    products: IProduct[];
+}
 
 // Props
 export interface ChildrenProps {
