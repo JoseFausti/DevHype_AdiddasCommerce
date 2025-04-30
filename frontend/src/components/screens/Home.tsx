@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
 import { products } from '../../data/Products'
-import ProductCard from './ProductCard'
 import Styles from './Home.module.css'
 import { interestingItems } from '../../data/InterestingData'
+import ProductCard from '../ui/ProductCard'
 
 const Home: React.FC = () => {
   return (

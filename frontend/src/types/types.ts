@@ -90,6 +90,13 @@ export interface ChildrenProps {
     children: ReactNode;
 }
 
+export interface ProductCardProps {
+    image: string;
+    price: number;
+    title: string;
+    subtitle: string;
+  }
+
 // Http props
 export interface IHttpResponse<E> {
     data: E | Partial<E>;
