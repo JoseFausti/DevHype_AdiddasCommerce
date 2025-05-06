@@ -29,6 +29,7 @@ body, html, #root {
   width: 100%;
   min-width: 550px;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 p{

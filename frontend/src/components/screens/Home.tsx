@@ -56,9 +56,11 @@ const Home: React.FC = () => {
               <img src="/modeloDescuentos.jpeg" alt="Modelo Descuentos" />
             </div>
             <div className={Styles.home__benefit_text}>
-              <h2>OUTFITS FOR <br /><span>BENEFITS</span></h2>
-              <p><span>60% OFF + free shipping:</span> onlu for Adidas clients.</p>
-              <p>Check your account and start buying for benefits on <span>Adidas</span></p>
+              <h2 className={Styles.benefits__title}>
+                OUTFITS FOR <br /><span>BENEFITS</span>
+              </h2>
+              <p className={Styles.benefits__text}><span>60% OFF + free shipping:</span> onlu for Adidas clients.</p>
+              <p className={Styles.benefits__text}>Check your account and start buying for benefits on <span>Adidas</span></p>
             </div>
           </div>
           <Link to="/discounts" className={Styles.discounts__title}>DISCOUNTS</Link>
@@ -107,17 +109,19 @@ const Home: React.FC = () => {
           <img src="/modelo1.png" alt="Modelo History and Grace" />
         </div>
         <div className={Styles.home__history_title}>
-          <h2>HISTORY AND GRACE</h2>
+          <h2 className={Styles.history__title}>
+            HISTORY AND GRACE
+          </h2>
         </div>
         <div className={Styles.home__history_text}>
-          <p>At adidas, we believe that sports have the 
+          <p className={Styles.history__text}>At adidas, we believe that sports have the
             power to transform lives. It's not just about keeping your body and mind fit; it's about bringing people together and creating a community of individuals who share the same passion for excellence.</p>
-          <p>Whether you're a runner, a basketball player, a soccer player, or someone who loves to train, you'll find a home with us. Our products are designed to meet your needs, no matter what your preferred form of exercise may be.</p>
-          <p>We draw inspiration from the athletes who push themselves to their limits every day, and from the technology we develop to help them achieve their goals.</p>
-          <p>We're not just present on the playing field, either. You'll find the three stripes at music festivals, on stages, and in the city streets.</p>
+          <p className={Styles.history__text}>Whether you're a runner, a basketball player, a soccer player, or someone who loves to train, you'll find a home with us. Our products are designed to meet your needs, no matter what your preferred form of exercise may be.</p>
+          <p className={Styles.history__text}>We draw inspiration from the athletes who push themselves to their limits every day, and from the technology we develop to help them achieve their goals.</p>
+          <p className={Styles.history__text}>We're not just present on the playing field, either. You'll find the three stripes at music festivals, on stages, and in the city streets.</p>
         </div>
         <div className={Styles.home__history_footer}>
-          <h4>To improve performances. Improve lives <br />and change de world</h4>
+          <h4 className={Styles.text_footer}>To improve performances. Improve lives <br />and change de world</h4>
         </div>
       </div>
       <div className={Styles.carrousel__container}>
