@@ -157,7 +157,7 @@
 }
 
 .footer__elements h2 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -203,11 +203,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.4rem;
 }
 
 .adidasLogo {
-  width: 60px;
+  width: 70px;
   height: auto;
 }
 

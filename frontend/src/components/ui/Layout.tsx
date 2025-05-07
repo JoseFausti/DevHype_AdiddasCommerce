@@ -50,8 +50,6 @@ const Layout = () => {
             </main>
 
             <footer className={styles.footer__container}>
-
-                {/* LOGO ADIDAS CENTRADO ARRIBA */}
                 <div className={styles.adidasImage}>
                     <img
                         src="/assets/Logotipo Adidas Blanco.png"
