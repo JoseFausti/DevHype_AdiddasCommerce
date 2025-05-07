@@ -49,51 +49,84 @@ const Layout = () => {
                 <Outlet />
             </main>
 
-            {/* Footer */}
             <footer className={styles.footer__container}>
+
+                {/* LOGO ADIDAS CENTRADO ARRIBA */}
+                <div className={styles.adidasImage}>
+                    <img
+                        src="/assets/Logotipo Adidas Blanco.png"
+                        alt="Adidas Logo"
+                        className={styles.adidasLogo}
+                    />
+                </div>
+
+                {/* BLOQUES DE TEXTO */}
                 <div className={styles.footer__components__container}>
                     <div className={styles.footer__elements}>
-                        <h2>Info</h2>
+                        <h2>INFO</h2>
                         <ul>
-                            <li>About Us</li>
-                            <li>Privacy Policy</li>
-                            <li>Terms of Service</li>
-                            <li>Shipping Policy</li>
+                            <li>Terms and Conditions</li>
+                            <li>Cookies</li>
+                            <li>Privacy Politics</li>
                         </ul>
                     </div>
+
                     <div className={styles.footer__elements}>
-                        <h2>Collections</h2>
+                        <h2>COLLECTIONS</h2>
                         <ul>
-                            <li>Men</li>
-                            <li>Women</li>
-                            <li>Shoes</li>
-                            <li>Discounts</li>
+                            <li>Ultraboost</li>
+                            <li>Confirmed</li>
+                            <li>NMD</li>
+                            <li>Originals</li>
                         </ul>
                     </div>
+
                     <div className={styles.footer__elements}>
-                        <h2>Support</h2>
+                        <h2>SPORTS</h2>
                         <ul>
-                            <li>FAQ</li>
-                            <li>Shipping & Returns</li>
-                            <li>Order Tracking</li>
-                            <li>Size Guide</li>
-                            <li>Contact Us</li>
+                            <li>Football</li>
+                            <li>Basketball</li>
+                            <li>Running</li>
+                            <li>Training</li>
                         </ul>
                     </div>
+
                     <div className={styles.footer__elements}>
-                        <h2>Follow Us</h2>
+                        <h2>SUPPORT</h2>
                         <ul>
-                            <li>Facebook</li>
-                            <li>Instagram</li>
-                            <li>Twitter</li>
-                            <li>YouTube</li>
+                            <li>Customer</li>
+                            <li>F.A.Q.</li>
+                            <li>Shipping</li>
+                            <li>adiClub</li>
                         </ul>
+                    </div>
+
+                    <div className={styles.footer__elements}>
+                        <h2>FOLLOW US</h2>
+                        <div className={styles.socialIcons}>
+                            <a href="https://facebook.com">
+                                <img src="/assets/Facebook_Logo.png" alt="Facebook" />
+                            </a>
+                            <a href="https://instagram.com">
+                                <img src="/assets/Instagram_Logo.png" alt="Instagram" />
+                            </a>
+                            <a href="https://twitter.com">
+                                <img src="/assets/X_Logo.png" alt="X" />
+                            </a>
+                            <a href="https://youtube.com">
+                                <img src="/assets/Youtube_Logo.png" alt="YouTube" />
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div className={styles.footer__payment}>
-                    <p>Visa</p>
-                    <p>Mastercard</p>
-                    <p>American Express</p>
+
+                {/* ICONOS DE PAGO */}
+                <div className={styles.footer__logo_and_payment}>
+                    <div className={styles.paymentIcons}>
+                        <img src="/assets/American_Express_Logo.png" alt="American Express" />
+                        <img src="/assets/Mastercard_Logo.png" alt="Mastercard" />
+                        <img src="/assets/Visa_Logo.png" alt="Visa" />
+                    </div>
                 </div>
             </footer>
         </div>
@@ -101,3 +134,6 @@ const Layout = () => {
 };
 
 export default Layout;
+
+
+
