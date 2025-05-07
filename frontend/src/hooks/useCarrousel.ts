@@ -21,6 +21,7 @@ export const useCarrousel = <T>(items: T[], intervalTime: number = 5000, itemsPe
     }, intervalTime);
 
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items.length, intervalTime, itemsPerInterval]);
 
   return { currentItems };
