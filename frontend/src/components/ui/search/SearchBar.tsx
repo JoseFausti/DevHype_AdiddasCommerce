@@ -1,3 +1,4 @@
+import { Search } from 'lucide-react';
 import Styles from './SearchBar.module.css'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +23,7 @@ const SearchBar = () => {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
-          <button type="submit">Buscar</button>
+          <button type="submit" className={Styles.submmit_button}><Search /></button>
       </form>
     </>
   );

@@ -113,6 +113,16 @@
     color: var(--color_amarillo);
 }
 
+.home__discounts{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+}
+
 .home__history_container {
     position: relative;
     width: 100%;
@@ -185,50 +195,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    position: relative;
     z-index: 4;
     margin-top: 2rem; /* nuevo */
 }
 
-@media screen and (max-width: 768px) {
-    .home__history_container {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-  
-    .home__history_text {
-      grid-template-columns: 1fr; /* una sola columna en mobile */
-      grid-template-rows: auto;
-      padding: 1rem;
-      gap: 1rem;
-      position: relative;
-      margin-bottom: 0;
-    }
-  
-    .home__history_footer {
-        position: absolute;
-        bottom: 0;
-    }
-  
-    .home__history_image {
-        margin: 0;
-        position: relative; 
-        opacity: 1;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-        order: 2;
-      }
-    
-    .home__history_image img {
-        width: 100%;
-        max-width: 520px;
-        height: auto;
-        object-fit: cover;
-    }
-}
 
 .carrousel__container{
     width: 100%;

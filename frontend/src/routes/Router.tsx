@@ -6,18 +6,24 @@ import Shopcart from "../components/screens/Shopcart"
 import Products from "../components/screens/Products"
 import Logout from "../components/screens/Logout"
 import Admin from "../components/screens/Admin"
+import Layout from "../components/ui/Layout"
 
 const Router = () => {
   return (
     <BrowserRouter> 
         <Routes>
-            <Route path="/" element={<App/>} />
+            {/* Rutas con Layout */}
+            <Route element={<Layout/>}>
+              <Route path="/" element={<App/>} />
+              <Route path="/admin" element={<Admin/>} />
+              <Route path="/products" element={<Products/>} />
+              <Route path="/shopcart" element={<Shopcart/>} />
+            </Route>
+
+            {/* Rutas sin Layout */}
             <Route path="/login" element={<Login/>} />
             <Route path="/register" element={<Register/>} />
             <Route path="/logout" element={<Logout/>} />
-            <Route path="/admin" element={<Admin/>} />
-            <Route path="/products" element={<Products/>} />
-            <Route path="/shopcart" element={<Shopcart/>} />
         </Routes>
     </BrowserRouter>
   )
