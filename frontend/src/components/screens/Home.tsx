@@ -23,7 +23,7 @@ const Home: React.FC = () => {
   return (
     <div className={Styles.home__container}>
       <div className={Styles.home__image__container}>
-        <img src="/adidasRemera.png" alt="Banner Adidas Mall" className={Styles.imagen_responsive} />
+        <img src="/public/adidasRemera.png" alt="Banner Adidas Mall" className={Styles.imagen_responsive} />
       </div>
       <div className={Styles.home__content__container}>
         <div className={Styles.home__products_and_benefits}>
