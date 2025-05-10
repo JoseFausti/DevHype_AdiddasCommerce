@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.example.backend.entities.Base;
+import com.example.backend.models.entities.Base;
 import com.example.backend.services.BaseService;
 
 public abstract class BaseControllerImpl<E extends Base, S extends BaseService<E, Long>> implements BaseController<E, Long> {

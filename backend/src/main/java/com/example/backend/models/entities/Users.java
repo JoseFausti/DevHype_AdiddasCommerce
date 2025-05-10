@@ -1,9 +1,18 @@
-package com.example.backend.entities;
+package com.example.backend.models.entities;
+
+import java.util.Collection;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import com.example.backend.models.enums.Role;
+import org.springframework.security.core.userdetails.UserDetails;
+
 
 @Entity
 @Table(name = "users")
@@ -12,7 +21,10 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-public class Users extends Base{
+public class Users extends Base implements UserDetails {
+
+    @Column( name = "username")
+    private String username;
 
     @Column( name = "name")
     private String name;
@@ -27,7 +39,7 @@ public class Users extends Base{
     private String password;
 
     @Column( name = "role")
-    private String role;
+    private Role role;
 
     @ManyToMany(cascade= {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
@@ -36,4 +48,8 @@ public class Users extends Base{
         inverseJoinColumns = @JoinColumn(name = "directions_id")
         )
     private List<Directions> directions;
+
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
+    }
 }

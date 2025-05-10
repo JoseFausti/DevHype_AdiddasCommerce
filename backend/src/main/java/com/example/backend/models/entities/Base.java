@@ -1,4 +1,4 @@
-package com.example.backend.entities;
+package com.example.backend.models.entities;
 
 import java.io.Serializable;
 import jakarta.persistence.*;
@@ -16,5 +16,12 @@ public class Base implements Serializable {
 
     @Column(name = "deleted", columnDefinition = "boolean default false")
     private boolean deleted;
-    
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
 }

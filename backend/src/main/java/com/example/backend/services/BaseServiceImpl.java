@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
-import com.example.backend.entities.Base;
+import com.example.backend.models.entities.Base;
 import com.example.backend.repositories.BaseRepository;
 
 import jakarta.transaction.Transactional;

@@ -1,6 +1,6 @@
 package com.example.backend.services;
 
-import com.example.backend.entities.Types;
+import com.example.backend.models.entities.Types;
 import com.example.backend.repositories.BaseRepository;
 import com.example.backend.repositories.TypesRepository;
 import org.springframework.beans.factory.annotation.Autowired;

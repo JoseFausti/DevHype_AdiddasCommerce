@@ -3,7 +3,7 @@ package com.example.backend.services;
 import java.io.Serializable;
 import java.util.List;
 
-import com.example.backend.entities.Base;
+import com.example.backend.models.entities.Base;
 
 public interface BaseService<E extends Base, ID extends Serializable> {
 

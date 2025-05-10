@@ -3,7 +3,7 @@ package com.example.backend.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.backend.entities.Products;
+import com.example.backend.models.entities.Products;
 import com.example.backend.repositories.BaseRepository;
 import com.example.backend.repositories.ProductsRepository;
 

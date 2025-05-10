@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Role } from "../utils/enums";
 
 // Interfaces
 interface Base{
@@ -55,11 +56,12 @@ export interface IDirection extends Base{
 }
 
 export interface IUser extends Base{
+    username: string;
     name: string;
     surname: string;
     email: string;
     password: string;
-    role: string;
+    role: Role;
     address: IDirection
 }
 
